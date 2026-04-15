@@ -6,17 +6,15 @@
     <title>정부대전청사 공무원노조연합회</title>
     
     <style>
-        /* 1. 배경 및 전체 레이아웃 */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* 스크롤 방지 */
+            overflow: hidden;
         }
 
         body {
-            /* 배경 이미지 설정: 어둡게 처리하여 글씨 가독성 확보 */
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
                         url('배경.png') no-repeat center center;
             background-size: cover;
@@ -26,36 +24,22 @@
             font-family: "Noto Sans KR", sans-serif;
         }
 
-        /* 2. 중앙 로그인 박스 (모바일 여백 강조 버전) */
         .box {
-            background: rgba(0, 0, 0, 0.7); /* 반투명 검정 */
-            backdrop-filter: blur(8px); /* 배경 흐림 효과 추가 */
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
             padding: 45px 25px;
             border-radius: 25px;
             color: white;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            
-            /* [여백 설정] 폰 화면 가로의 75%만 차지하여 양옆 여백 확보 */
             width: 75%;
             max-width: 380px; 
             box-sizing: border-box;
         }
 
-        h2 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            word-break: keep-all;
-            line-height: 1.4;
-        }
+        h2 { font-size: 1.3rem; margin-bottom: 8px; word-break: keep-all; line-height: 1.4; }
+        p { font-size: 0.9rem; margin-bottom: 30px; opacity: 0.8; }
 
-        p {
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            opacity: 0.8;
-        }
-
-        /* 3. 입력창 및 버튼 */
         input {
             width: 100%;
             padding: 15px;
@@ -63,9 +47,8 @@
             border: none;
             border-radius: 12px;
             box-sizing: border-box;
-            font-size: 16px; /* 아이폰 자동 줌 방지용 크기 */
+            font-size: 16px;
             text-align: center;
-            background: white;
         }
 
         button {
@@ -78,12 +61,6 @@
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        button:active {
-            background-color: #e04040;
-            transform: scale(0.96);
         }
     </style>
 </head>
@@ -92,14 +69,23 @@
     <div class="box">
         <h2>정부대전청사 공무원노조연합회</h2>
         <p>비밀번호를 입력하여 접속하세요.</p>
-        <input type="password" placeholder="비밀번호 입력">
+        <input type="password" id="pw" placeholder="비밀번호 입력" onkeypress="if(event.keyCode==13) {checkPassword();}">
         <button onclick="checkPassword()">확인</button>
     </div>
 
     <script>
         function checkPassword() {
-            // 여기에 비밀번호 확인 로직을 추가할 수 있습니다.
-            alert("확인 버튼이 클릭되었습니다.");
+            const passwordInput = document.getElementById('pw').value;
+            const correctPassword = "1234"; // <-- 여기에 사용할 비밀번호를 적으세요!
+
+            if (passwordInput === correctPassword) {
+                // 비밀번호가 맞으면 해당 주소로 이동
+                window.location.href = "https://naver.me/xcnavVEs";
+            } else {
+                // 틀리면 경고창
+                alert("비밀번호가 틀렸습니다. 다시 입력해주세요.");
+                document.getElementById('pw').value = ""; // 입력칸 비우기
+            }
         }
     </script>
 
