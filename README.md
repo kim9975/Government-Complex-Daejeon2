@@ -1,5 +1,3 @@
-# Government-Complex-Daejeon2
-정부대전청사공무원노조연합회 세상에하나뿐인치과 예약사이트
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -24,7 +22,7 @@
             width: 420px;
             padding: 40px 30px;
             border-radius: 20px;
-            background: rgba(0, 0, 0, 0.5); /* 반투명 블랙 */
+            background: rgba(0, 0, 0, 0.5);
             text-align: center;
             backdrop-filter: blur(4px);
             color: white;
@@ -85,8 +83,7 @@
         function checkPW() {
             const pw = document.getElementById('pw').value;
             if (pw === "1234") {
-                alert("접속 허용");
-                // location.href = "main.html";  // 이동할 페이지 있으면 여기 넣기
+                window.location.href = "https://naver.me/xcnavVEs";
             } else {
                 alert("비밀번호가 틀렸습니다.");
             }
