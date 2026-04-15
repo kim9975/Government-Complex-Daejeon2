@@ -6,18 +6,18 @@
     <title>정부대전청사 공무원노조연합회</title>
     
     <style>
-        /* 1. 전체 배경 설정 */
+        /* 1. 배경 및 전체 레이아웃 */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* 배경이 흔들리지 않게 고정 */
+            overflow: hidden; /* 스크롤 방지 */
         }
 
         body {
-            /* 배경 이미지 설정 (폰에서도 꽉 차게) */
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+            /* 배경 이미지 설정: 어둡게 처리하여 글씨 가독성 확보 */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
                         url('배경.png') no-repeat center center;
             background-size: cover;
             display: flex;
@@ -26,44 +26,46 @@
             font-family: "Noto Sans KR", sans-serif;
         }
 
-        /* 2. 중앙 박스 설정 (반응형) */
+        /* 2. 중앙 로그인 박스 (모바일 여백 강조 버전) */
         .box {
-            background: rgba(0, 0, 0, 0.7); /* 어두운 투명 배경 */
-            backdrop-filter: blur(5px); /* 배경을 살짝 흐리게 해서 고급스럽게 */
-            padding: 40px 30px;
-            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.7); /* 반투명 검정 */
+            backdrop-filter: blur(8px); /* 배경 흐림 효과 추가 */
+            padding: 45px 25px;
+            border-radius: 25px;
             color: white;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
             
-            /* [핵심] 폰에서는 화면의 85%, PC에서는 최대 400px */
-            width: 85%;
-            max-width: 400px;
+            /* [여백 설정] 폰 화면 가로의 75%만 차지하여 양옆 여백 확보 */
+            width: 75%;
+            max-width: 380px; 
             box-sizing: border-box;
         }
 
         h2 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            word-break: keep-all; /* 단어가 잘리지 않게 함 */
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            word-break: keep-all;
+            line-height: 1.4;
         }
 
         p {
             font-size: 0.9rem;
-            margin-bottom: 25px;
-            opacity: 0.9;
+            margin-bottom: 30px;
+            opacity: 0.8;
         }
 
-        /* 3. 입력창 및 버튼 (폰에서 터치하기 편하게) */
+        /* 3. 입력창 및 버튼 */
         input {
             width: 100%;
             padding: 15px;
             margin-bottom: 15px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             box-sizing: border-box;
-            font-size: 16px; /* 아이폰에서 자동 줌 방지 */
+            font-size: 16px; /* 아이폰 자동 줌 방지용 크기 */
             text-align: center;
+            background: white;
         }
 
         button {
@@ -72,16 +74,16 @@
             background-color: #ff5252;
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.2s;
         }
 
         button:active {
             background-color: #e04040;
-            transform: scale(0.98);
+            transform: scale(0.96);
         }
     </style>
 </head>
@@ -96,7 +98,7 @@
 
     <script>
         function checkPassword() {
-            // 여기에 비밀번호 로직을 넣으실 수 있습니다.
+            // 여기에 비밀번호 확인 로직을 추가할 수 있습니다.
             alert("확인 버튼이 클릭되었습니다.");
         }
     </script>
