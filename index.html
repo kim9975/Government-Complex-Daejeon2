@@ -33,7 +33,7 @@
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
             width: 90%;
-            max-width: 550px; /* 👉 넓혀서 한 줄 유지 */
+            max-width: 550px;
             box-sizing: border-box;
         }
 
@@ -50,12 +50,21 @@
             opacity: 0.8; 
         }
 
+        /* PC에서는 한 줄 */
         .notice {
             font-size: 0.8rem;
             opacity: 0.8;
             line-height: 1.5;
             margin-bottom: 25px;
-            white-space: nowrap; /* 👉 한 줄 고정 */
+            white-space: nowrap;
+        }
+
+        /* 📱 모바일에서는 자동 줄바꿈 */
+        @media (max-width: 600px) {
+            .notice {
+                white-space: normal;
+                font-size: 0.75rem;
+            }
         }
 
         input {
