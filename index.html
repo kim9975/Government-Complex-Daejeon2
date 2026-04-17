@@ -32,8 +32,8 @@
             color: white;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            width: 85%;
-            max-width: 420px;
+            width: 90%;
+            max-width: 550px; /* 👉 넓혀서 한 줄 유지 */
             box-sizing: border-box;
         }
 
@@ -55,7 +55,7 @@
             opacity: 0.8;
             line-height: 1.5;
             margin-bottom: 25px;
-            word-break: keep-all;
+            white-space: nowrap; /* 👉 한 줄 고정 */
         }
 
         input {
