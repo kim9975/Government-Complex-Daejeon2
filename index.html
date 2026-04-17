@@ -50,7 +50,7 @@
             opacity: 0.8; 
         }
 
-        /* PC에서는 한 줄 */
+        /* PC: 한 줄 유지 */
         .notice {
             font-size: 0.8rem;
             opacity: 0.8;
@@ -59,11 +59,20 @@
             white-space: nowrap;
         }
 
-        /* 📱 모바일에서는 자동 줄바꿈 */
+        /* 기본은 줄바꿈 숨김 */
+        .mobile-break {
+            display: none;
+        }
+
+        /* 📱 모바일에서만 줄바꿈 적용 */
         @media (max-width: 600px) {
             .notice {
                 white-space: normal;
                 font-size: 0.75rem;
+            }
+
+            .mobile-break {
+                display: block; /* 줄바꿈 역할 */
             }
         }
 
@@ -97,7 +106,9 @@
         <h2>정부대전청사 공무원노조연합회</h2>
         <p>비밀번호를 입력하여 접속하세요.</p>
         <p class="notice">
-            *네이버 플레이스 예약창 요청사항에 본인의 소속과 비밀번호를 적어주세요*
+            *네이버 플레이스 예약창 요청사항에 본인의 
+            <span class="mobile-break"></span>
+            소속과 비밀번호를 적어주세요*
         </p>
 
         <input type="password" id="pw" placeholder="비밀번호 입력" onkeypress="if(event.keyCode==13) {checkPassword();}">
